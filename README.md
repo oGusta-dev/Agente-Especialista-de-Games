@@ -4,7 +4,7 @@ Aplicação que recomenda um jogo conforme o gênero, a plataforma e o nível de
 
 ## Acesse o app online
 
-**[Abrir Agente Especialista de Games](https://agente-especialista-de-games-dtuedxqpqvy2vcu62v38fr.streamlit.app/)**
+**[Abrir Agente Especialista de Games](https://agente-especialista-de-games.streamlit.app/)**
 
 ## Executar pelo VS Code
 
