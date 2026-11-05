@@ -24,15 +24,32 @@ hardware = st.selectbox(
         ["Leve","Pesado"]
 )
 
-#realiza a busca do jogo com base nos critérios selecionados
-if st.button("Buscar Jogo", type="primary"):
-    recomendacao = buscar_jogo(genero, plataforma, hardware)
-    if recomendacao:
-        st.success(f"Recomendação de Jogo: {recomendacao['titulo']}")
-        st.write(f"Gênero: {recomendacao['genero']}")
-        st.write(f"Plataforma: {recomendacao['plataforma']}")
-        st.write(f"Hardware: {recomendacao['hardware']}")
-        st.write(f"Descrição: {recomendacao['descricao']}")
-        st.write(f"Especificações Resumidas: {recomendacao['specs_resumo']}")
-    else:
-        st.error("Nenhum jogo encontrado com os critérios selecionados.")
+# Mantém o resultado entre as atualizações da página feitas pelo Streamlit.
+if "recomendacao" not in st.session_state:
+    st.session_state.recomendacao = None
+if "busca_realizada" not in st.session_state:
+    st.session_state.busca_realizada = False
+
+col_buscar, col_limpar = st.columns(2)
+with col_buscar:
+    buscar_clicado = st.button("Buscar Jogo", type="primary")
+with col_limpar:
+    limpar_clicado = st.button("Limpar pesquisa")
+
+if limpar_clicado:
+    st.session_state.recomendacao = None
+    st.session_state.busca_realizada = False
+elif buscar_clicado:
+    st.session_state.recomendacao = buscar_jogo(genero, plataforma, hardware)
+    st.session_state.busca_realizada = True
+
+recomendacao = st.session_state.recomendacao
+if recomendacao:
+    st.success(f"Recomendação de Jogo: {recomendacao['titulo']}")
+    st.write(f"Gênero: {recomendacao['genero']}")
+    st.write(f"Plataforma: {recomendacao['plataforma']}")
+    st.write(f"Hardware: {recomendacao['hardware']}")
+    st.write(f"Descrição: {recomendacao['descricao']}")
+    st.write(f"Especificações Resumidas: {recomendacao['specs_resumo']}")
+elif st.session_state.busca_realizada:
+    st.error("Nenhum jogo encontrado com os critérios selecionados.")
