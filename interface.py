@@ -6,7 +6,7 @@ from main import buscar_jogo
 st.set_page_config(page_title="Agente Especialis", page_icon=":video_game:", layout="centered")
 
 #formulario de busca
-st.title("Agente Especialis de Jogos")
+st.title("Agente Especialista de Jogos")
 st.subheader("Encontre o jogo ideal para você!")
 st.text("Preencha os campos abaixo para receber uma recomendação de jogo com base em suas preferências.")
 st.write(" ")
