@@ -1,67 +1,54 @@
-
-import streamlit as st 
+import streamlit as st
 from main import buscar_jogo
 
-#configaração do titulo da pagina
-st.set_page_config(page_title="Agente Especialis", page_icon=":video_game:", layout="centered")
+st.set_page_config(page_title="Agente Especialista de Jogos", layout="centered")
 
-#formulario de busca
 st.title("Agente Especialista de Jogos")
-st.subheader("Encontre o jogo ideal para você!")
-st.text("Preencha os campos abaixo para receber uma recomendação de jogo com base em suas preferências.")
-st.write(" ")
+st.header("Encontre o jogo ideal para você!")
+st.write("Preencha os campos abaixo para receber uma recomendação de jogo com base em suas preferências.")
 
+st.write("")
+
+# Menus suspensos
 genero = st.selectbox(
     "Selecione o genero",
-    ["RPG de Aventura","Corrida", "Tiro"]
+    options=["RPG de Aventura", "Corrida", "Tiro"]
 )
+
 plataforma = st.selectbox(
     "Selecione a plataforma que você desejar jogar",
-        ["PC","Console", "Mobile"]
+    options=["PC", "Console", "Mobile"]
 )
+
 hardware = st.selectbox(
     "O jogo deve ser?",
-        ["Leve","Pesado"]
+    options=["Leve", "Pesado"]
 )
 
-# Mantém o resultado entre as atualizações da página feitas pelo Streamlit.
-if "recomendacao" not in st.session_state:
-    st.session_state.recomendacao = None
-if "busca_realizada" not in st.session_state:
-    st.session_state.busca_realizada = False
+# 1. Definição do Modal (Janela Popup)
+@st.dialog("🎮 Recomendação Encontrada!")
+def mostrar_modal_jogo(jogo):
+    # Conteúdo exibido dentro da janela flutuante
+    st.success(f"**Jogo:** {jogo['titulo']}")
+    st.write(f"**Gênero:** {jogo['genero']}")
+    st.write(f"**Plataforma:** {jogo['plataforma']}")
+    st.write(f"**Hardware:** {jogo['hardware']}")
+    
+    st.divider()
+    st.write(f"**Descrição:** {jogo['descricao']}")
+    st.caption(f"💡 **Requisitos:** {jogo['specs_resumo']}")
+    
+    # Botão para fechar o modal
+    if st.button("Fechar", type="primary"):
+        st.rerun()
 
-with st.container(horizontal=True, horizontal_alignment="left", gap="small"):
-    buscar_clicado = st.button("Buscar Jogo", type="primary", width="content")
-    limpar_clicado = st.button("Limpar pesquisa", width="content")
-
-if limpar_clicado:
-    st.session_state.recomendacao = None
-    st.session_state.busca_realizada = False
-elif buscar_clicado:
-    st.session_state.recomendacao = buscar_jogo(genero, plataforma, hardware)
-    st.session_state.busca_realizada = True
-
-recomendacao = st.session_state.recomendacao
-if recomendacao:
-    st.success(f"Recomendação de Jogo: {recomendacao['titulo']}")
-    col_capa, col_detalhes = st.columns([1, 2])
-
-    with col_capa:
-        if recomendacao.get("capa_url"):
-            st.image(
-                recomendacao["capa_url"],
-                caption=recomendacao["titulo"],
-                width=220,
-                alt=f"Capa do jogo {recomendacao['titulo']}",
-            )
-        else:
-            st.info("Capa não cadastrada para este jogo.")
-
-    with col_detalhes:
-        st.write(f"Gênero: {recomendacao['genero']}")
-        st.write(f"Plataforma: {recomendacao['plataforma']}")
-        st.write(f"Hardware: {recomendacao['hardware']}")
-        st.write(f"Descrição: {recomendacao['descricao']}")
-        st.write(f"Especificações Resumidas: {recomendacao['specs_resumo']}")
-elif st.session_state.busca_realizada:
-    st.error("Nenhum jogo encontrado com os critérios selecionados.")
+# 2. Botão Principal e Disparo do Modal
+if st.button("Buscar Jogo"):
+    # Busca na main.py
+    resultado = buscar_jogo(genero, plataforma, hardware)
+    
+    if resultado:
+        # Chama a função decorada para abrir o Modal na tela
+        mostrar_modal_jogo(resultado)
+    else:
+        st.warning("Nenhum jogo encontrado com os critérios selecionados.")
