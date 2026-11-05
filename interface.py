@@ -30,7 +30,7 @@ if "recomendacao" not in st.session_state:
 if "busca_realizada" not in st.session_state:
     st.session_state.busca_realizada = False
 
-col_buscar, col_limpar = st.columns(2)
+col_buscar, col_limpar, _ = st.columns([1.2, 1.6, 5.5], gap="small")
 with col_buscar:
     buscar_clicado = st.button("Buscar Jogo", type="primary")
 with col_limpar:
