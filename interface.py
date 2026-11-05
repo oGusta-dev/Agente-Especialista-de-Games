@@ -46,10 +46,24 @@ elif buscar_clicado:
 recomendacao = st.session_state.recomendacao
 if recomendacao:
     st.success(f"Recomendação de Jogo: {recomendacao['titulo']}")
-    st.write(f"Gênero: {recomendacao['genero']}")
-    st.write(f"Plataforma: {recomendacao['plataforma']}")
-    st.write(f"Hardware: {recomendacao['hardware']}")
-    st.write(f"Descrição: {recomendacao['descricao']}")
-    st.write(f"Especificações Resumidas: {recomendacao['specs_resumo']}")
+    col_capa, col_detalhes = st.columns([1, 2])
+
+    with col_capa:
+        if recomendacao.get("capa_url"):
+            st.image(
+                recomendacao["capa_url"],
+                caption=recomendacao["titulo"],
+                width=220,
+                alt=f"Capa do jogo {recomendacao['titulo']}",
+            )
+        else:
+            st.info("Capa não cadastrada para este jogo.")
+
+    with col_detalhes:
+        st.write(f"Gênero: {recomendacao['genero']}")
+        st.write(f"Plataforma: {recomendacao['plataforma']}")
+        st.write(f"Hardware: {recomendacao['hardware']}")
+        st.write(f"Descrição: {recomendacao['descricao']}")
+        st.write(f"Especificações Resumidas: {recomendacao['specs_resumo']}")
 elif st.session_state.busca_realizada:
     st.error("Nenhum jogo encontrado com os critérios selecionados.")
