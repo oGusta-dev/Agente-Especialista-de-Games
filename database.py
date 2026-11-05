@@ -2,6 +2,7 @@ JOGOS_DATABASE = [
        # templete base,
        # "id": ,
        # "titulo": "nome do jogo",
+       # "capa_url": "URL da imagem da capa",
        # "genero": " ",
        # "plataforma": " ",
        # "hardware": " ",
@@ -12,6 +13,7 @@ JOGOS_DATABASE = [
     {
         "id": 1,
         "titulo": "Stardew Valley",
+        "capa_url": "https://cdn.akamai.steamstatic.com/steam/apps/413150/library_600x900_2x.jpg",
         "genero": "RPG de Aventura",
         "plataforma": "PC",
         "hardware": "Leve",
@@ -21,6 +23,7 @@ JOGOS_DATABASE = [
     {
         "id": 2,
         "titulo": "Cyberpunk 2077",
+        "capa_url": "https://cdn.akamai.steamstatic.com/steam/apps/1091500/library_600x900_2x.jpg",
         "genero": "RPG de Aventura",
         "plataforma": "PC",
         "hardware": "Pesado",
@@ -30,6 +33,7 @@ JOGOS_DATABASE = [
     {
         "id": 3,
         "titulo": "Persona 4 Golden",
+        "capa_url": "https://cdn.akamai.steamstatic.com/steam/apps/1113000/library_600x900_2x.jpg",
         "genero": "RPG de Aventura",
         "plataforma": "Console",
         "hardware": "Leve",
@@ -39,6 +43,7 @@ JOGOS_DATABASE = [
     {
         "id": 4,
         "titulo": "The Witcher 3: Wild Hunt",
+        "capa_url": "https://cdn.akamai.steamstatic.com/steam/apps/292030/library_600x900_2x.jpg",
         "genero": "RPG de Aventura",
         "plataforma": "Console",
         "hardware": "Pesado",
@@ -48,6 +53,7 @@ JOGOS_DATABASE = [
     {
         "id": 5,
         "titulo": "Soul Knight",
+        "capa_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7e/c1/70/7ec1702c-6316-09a7-7848-4b6d12177776/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
         "genero": "RPG de Aventura",
         "plataforma": "Mobile",
         "hardware": "Leve",
@@ -57,6 +63,7 @@ JOGOS_DATABASE = [
     {
         "id": 6,
         "titulo": "Genshin Impact",
+        "capa_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/15/9e/b1/159eb1a7-fc58-2b43-b330-c5e619a77e2d/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
         "genero": "RPG de Aventura",
         "plataforma": "Mobile",
         "hardware": "Pesado",
@@ -68,6 +75,7 @@ JOGOS_DATABASE = [
     {
         "id": 7,
         "titulo": "Need for Speed Underground 2",
+        "capa_url": "https://upload.wikimedia.org/wikipedia/en/1/10/Nfsu2-win-cover.jpg",
         "genero": "Corrida",
         "plataforma": "PC",
         "hardware": "Leve",
@@ -77,6 +85,7 @@ JOGOS_DATABASE = [
     {
         "id": 8,
         "titulo": "Forza Horizon 5",
+        "capa_url": "https://cdn.akamai.steamstatic.com/steam/apps/1551360/library_600x900_2x.jpg",
         "genero": "Corrida",
         "plataforma": "PC",
         "hardware": "Pesado",
@@ -86,6 +95,7 @@ JOGOS_DATABASE = [
     {
         "id": 9,
         "titulo": "TrackMania Nations",
+        "capa_url": "https://cdn.akamai.steamstatic.com/steam/apps/11020/library_600x900_2x.jpg",
         "genero": "Corrida",
         "plataforma": "Console",
         "hardware": "Leve",
@@ -95,6 +105,7 @@ JOGOS_DATABASE = [
     {
         "id": 10,
         "titulo": "Gran Turismo 7",
+        "capa_url": "https://upload.wikimedia.org/wikipedia/en/1/14/Gran_Turismo_7_cover_art.jpg",
         "genero": "Corrida",
         "plataforma": "Console",
         "hardware": "Pesado",
@@ -104,6 +115,7 @@ JOGOS_DATABASE = [
     {
         "id": 11,
         "titulo": "Beach Buggy Racing",
+        "capa_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5c/b5/23/5cb52386-b047-ae00-3857-8fcfcd7ee2ec/AppIcon-0-0-1x_U007emarketing-0-11-85-220.jpeg/512x512bb.jpg",
         "genero": "Corrida",
         "plataforma": "Mobile",
         "hardware": "Leve",
@@ -113,6 +125,7 @@ JOGOS_DATABASE = [
     {
         "id": 12,
         "titulo": "Real Racing 3",
+        "capa_url": "https://upload.wikimedia.org/wikipedia/en/5/5d/Real_Racing_3.jpg",
         "genero": "Corrida",
         "plataforma": "Mobile",
         "hardware": "Pesado",
@@ -124,6 +137,7 @@ JOGOS_DATABASE = [
     {
         "id": 13,
         "titulo": "Counter-Strike Source",
+        "capa_url": "https://cdn.akamai.steamstatic.com/steam/apps/240/library_600x900_2x.jpg",
         "genero": "Tiro",
         "plataforma": "PC",
         "hardware": "Leve",
@@ -133,6 +147,7 @@ JOGOS_DATABASE = [
     {
         "id": 14,
         "titulo": "Call of Duty: Warzone",
+        "capa_url": "https://cdn.akamai.steamstatic.com/steam/apps/1962663/library_600x900_2x.jpg",
         "genero": "Tiro",
         "plataforma": "PC",
         "hardware": "Pesado",
@@ -142,6 +157,7 @@ JOGOS_DATABASE = [
     {
         "id": 15,
         "titulo": "Left 4 Dead 2",
+        "capa_url": "https://cdn.akamai.steamstatic.com/steam/apps/550/library_600x900_2x.jpg",
         "genero": "Tiro",
         "plataforma": "Console",
         "hardware": "Leve",
@@ -151,6 +167,7 @@ JOGOS_DATABASE = [
     {
         "id": 16,
         "titulo": "Battlefield 2042",
+        "capa_url": "https://cdn.akamai.steamstatic.com/steam/apps/1517290/library_600x900_2x.jpg",
         "genero": "Tiro",
         "plataforma": "Console",
         "hardware": "Pesado",
@@ -160,6 +177,7 @@ JOGOS_DATABASE = [
     {
         "id": 17,
         "titulo": "Mini Militia",
+        "capa_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/05/1a/79/051a792c-fb53-473b-d6be-8073b3285988/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.jpg",
         "genero": "Tiro",
         "plataforma": "Mobile",
         "hardware": "Leve",
@@ -169,6 +187,7 @@ JOGOS_DATABASE = [
     {
         "id": 18,
         "titulo": "Call of Duty: Mobile",
+        "capa_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bc/66/35/bc6635d9-68f4-6ab5-969f-92e034a50cfa/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/512x512bb.jpg",
         "genero": "Tiro",
         "plataforma": "Mobile",
         "hardware": "Pesado",
