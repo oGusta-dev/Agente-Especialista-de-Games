@@ -30,11 +30,9 @@ if "recomendacao" not in st.session_state:
 if "busca_realizada" not in st.session_state:
     st.session_state.busca_realizada = False
 
-col_buscar, col_limpar, _ = st.columns([1.2, 1.6, 5.5], gap="small")
-with col_buscar:
-    buscar_clicado = st.button("Buscar Jogo", type="primary")
-with col_limpar:
-    limpar_clicado = st.button("Limpar pesquisa")
+with st.container(horizontal=True, horizontal_alignment="left", gap="small"):
+    buscar_clicado = st.button("Buscar Jogo", type="primary", width="content")
+    limpar_clicado = st.button("Limpar pesquisa", width="content")
 
 if limpar_clicado:
     st.session_state.recomendacao = None
